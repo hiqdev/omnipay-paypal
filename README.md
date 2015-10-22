@@ -1,7 +1,7 @@
 PayPal plugin for PHP merchant library
 --------------------------------------
 
-PayPal plugin for PHP merchant library
+[PayPal](https://paupal.com/) plugin for [PHP merchant library](https://github.com/hiqdev/php-merchant).
 
 [![Latest Stable Version](https://poser.pugx.org/hiqdev/php-merchant-paypal/v/stable.png)](https://packagist.org/packages/hiqdev/php-merchant-paypal)
 [![Total Downloads](https://poser.pugx.org/hiqdev/php-merchant-paypal/downloads.png)](https://packagist.org/packages/hiqdev/php-merchant-paypal)
