@@ -9,9 +9,9 @@
  * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
  */
 
-namespace hiqdev\php\merchant;
+namespace hiqdev\php\merchant\paypal;
 
-class PayPalMerchant extends Merchant
+class Merchant extends \hiqdev\php\merchant\Merchant
 {
     protected static $_defaults = [
         'name'          => 'paypal',
