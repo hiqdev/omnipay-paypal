@@ -42,6 +42,9 @@
             "homepage": "https://hiqdev.com/"
         }
     ],
+    "require": {
+        "hiqdev/php-merchant": "*"
+    },
     "autoload": {
         "psr-4": {
             "hiqdev\\php\\merchant\\paypal\\": "src"
