@@ -1,0 +1,10 @@
+package:
+    name:           php-merchant-paypal
+    namespace:      hiqdev\php\merchant\paypal
+    title:          PayPal plugin for PHP merchant library
+    type:           library
+    keywords:       php, paypal, merchant
+
+require:
+    hiqdev/hidev-config:        "*"
+    hiqdev/hidev-config-php:    "*"
