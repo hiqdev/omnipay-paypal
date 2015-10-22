@@ -5,6 +5,7 @@ PayPal plugin for PHP merchant library
 
 [![Latest Stable Version](https://poser.pugx.org/hiqdev/php-merchant-paypal/v/stable.png)](https://packagist.org/packages/hiqdev/php-merchant-paypal)
 [![Total Downloads](https://poser.pugx.org/hiqdev/php-merchant-paypal/downloads.png)](https://packagist.org/packages/hiqdev/php-merchant-paypal)
+[![Dependency Status](https://www.versioneye.com/php/hiqdev:php-merchant-paypal/dev-master/badge.svg)](https://www.versioneye.com/php/hiqdev:php-merchant-paypal/dev-master)
 
 ## Installation
 
