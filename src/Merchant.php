@@ -1,10 +1,10 @@
 <?php
 
 /*
- * PHP merchant
+ * PayPal plugin for PHP merchant library
  *
- * @link      https://github.com/hiqdev/php-merchant
- * @package   php-merchant
+ * @link      https://github.com/hiqdev/php-merchant-paypal
+ * @package   php-merchant-paypal
  * @license   BSD-3-Clause
  * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
  */
@@ -14,11 +14,11 @@ namespace hiqdev\php\merchant\paypal;
 class Merchant extends \hiqdev\php\merchant\Merchant
 {
     protected static $_defaults = [
-        'name'          => 'paypal',
-        'label'         => 'PayPal',
-        #'actionUrl'    => 'https://sandbox.paypal.com/cgi-bin/webscr',
-        'actionUrl'     => 'https://www.paypal.com/cgi-bin/webscr',
-        'confirmText'   => 'OK'
+        #'actionUrl'  => 'https://sandbox.paypal.com/cgi-bin/webscr',
+        'name'        => 'paypal',
+        'label'       => 'PayPal',
+        'actionUrl'   => 'https://www.paypal.com/cgi-bin/webscr',
+        'confirmText' => 'OK',
     ];
 
     public function getInputs()
