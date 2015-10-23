@@ -5,7 +5,7 @@ package:
     type:           library
     keywords:       php, paypal, merchant
     description:    |
-        [PayPal](https://paupal.com/) plugin for [PHP merchant library](https://github.com/hiqdev/php-merchant).
+        [PayPal](https://paypal.com/) plugin for [PHP merchant library](https://github.com/hiqdev/php-merchant).
 
 require:
     hiqdev/hidev-config:        "*"
