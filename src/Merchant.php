@@ -14,10 +14,10 @@ namespace hiqdev\php\merchant\paypal;
 class Merchant extends \hiqdev\php\merchant\Merchant
 {
     protected static $_defaults = [
-        #'actionUrl'  => 'https://sandbox.paypal.com/cgi-bin/webscr',
-        'name'      => 'paypal',
+        'system'    => 'paypal',
         'label'     => 'PayPal',
         'actionUrl' => 'https://www.paypal.com/cgi-bin/webscr',
+    #   'actionUrl' => 'https://sandbox.paypal.com/cgi-bin/webscr',
     ];
 
     public function getInputs()
