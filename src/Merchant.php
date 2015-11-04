@@ -25,8 +25,8 @@ class Merchant extends \hiqdev\php\merchant\Merchant
         return [
             'cmd'         => '_xclick',
             'bn'          => 'PP-BuyNowBF:btn_paynowCC_LG.gif:NonHostedGuest',
-            'item_name'   => $this->description,
-            'amount'      => $this->total,
+            'item_name'   => $this->invoiceDescription,
+            'amount'      => $this->invoiceTotal,
             'business'    => $this->purse,
             'notify_url'  => $this->confirmUrl,
             'return'      => $this->successUrl,
@@ -56,12 +56,12 @@ class Merchant extends \hiqdev\php\merchant\Merchant
             return "Not VERIFIED: $result";
         }
         $this->mset([
-            'from'     => $this->prepareFrom($data),
-            'txn'      => $data['txn_id'],
-            'currency' => strtolower($data['mc_currency']),
-            'sum'      => $data['payment_gross'],
-            'fee'      => $data['payment_fee'],
-            'time'     => $this->formatDatetime($data['payment_date']),
+            'paymentTotal'    => $data['payment_gross'],
+            'paymentFee'      => $data['payment_fee'],
+            'paymentId'       => $data['txn_id'],
+            'paymentFrom'     => $this->prepareFrom($data),
+            'paymentTime'     => $this->formatDatetime($data['payment_date']),
+            'paymentCurrency' => strtolower($data['mc_currency']),
         ]);
 
         return;
