@@ -1,12 +1,12 @@
 <?php
 
 /*
- * PayPal plugin for PHP merchant library
+ * PayPal driver for Omnipay PHP payment library
  *
- * @link      https://github.com/hiqdev/php-merchant-paypal
- * @package   php-merchant-paypal
- * @license   BSD-3-Clause
- * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
+ * @link      https://github.com/hiqdev/omnipay-paypal
+ * @package   omnipay-paypal
+ * @license   MIT
+ * @copyright Copyright (c) 2015, HiQDev (http://hiqdev.com/)
  */
 
 namespace hiqdev\php\merchant\paypal;
