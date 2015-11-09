@@ -1,8 +1,9 @@
-hiqdev/php-merchant-paypal commits history
-------------------------------------------
+hiqdev/omnipay-paypal commits history
+-------------------------------------
 
 ## Under development
 
+    - c04ad8a 2015-11-04 NOT FINISHED redoing to omnipay (sol@hiqdev.com)
 - Added basics
     - bc3f644 2015-10-30 changed: redone to 'system' <- 'name' (sol@hiqdev.com)
     - 45dc0e0 2015-10-23 + validation (sol@hiqdev.com)

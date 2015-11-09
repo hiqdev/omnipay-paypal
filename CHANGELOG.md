@@ -1,5 +1,5 @@
-hiqdev/php-merchant-paypal changelog
-------------------------------------
+hiqdev/omnipay-paypal changelog
+-------------------------------
 
 ## Under development
 
