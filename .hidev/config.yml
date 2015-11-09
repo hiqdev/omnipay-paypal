@@ -1,6 +1,7 @@
 package:
     name:           omnipay-paypal
     namespace:      hiqdev\php\merchant\paypal
+    headline:       Omnipay: PayPal
     title:          PayPal driver for Omnipay PHP payment library
     type:           library
     license:        MIT

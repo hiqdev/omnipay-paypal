@@ -1,5 +1,7 @@
-PayPal driver for Omnipay PHP payment library
-=============================================
+Omnipay: PayPal
+===============
+
+**PayPal driver for Omnipay PHP payment library**
 
 [![Latest Stable Version](https://poser.pugx.org/hiqdev/omnipay-paypal/v/stable)](//packagist.org/packages/hiqdev/omnipay-paypal)
 [![Total Downloads](https://poser.pugx.org/hiqdev/omnipay-paypal/downloads)](//packagist.org/packages/hiqdev/omnipay-paypal)
