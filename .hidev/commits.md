@@ -3,6 +3,9 @@ hiqdev/omnipay-paypal commits history
 
 ## Under development
 
+- Redone to 'omnipay-paypal'
+    - f531b9a 2015-11-09 php-cs-fixed (sol@hiqdev.com)
+    - 08c625b 2015-11-09 started redoing to 'omnipay-paypal' (sol@hiqdev.com)
     - c04ad8a 2015-11-04 NOT FINISHED redoing to omnipay (sol@hiqdev.com)
 - Added basics
     - bc3f644 2015-10-30 changed: redone to 'system' <- 'name' (sol@hiqdev.com)
