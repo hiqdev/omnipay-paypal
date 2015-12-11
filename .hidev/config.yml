@@ -12,5 +12,5 @@ package:
         This package implements [PayPal](https://paypal.com/) support for Omnipay.
 
 require:
-    hiqdev/hidev-config:        "*"
-    hiqdev/hidev-config-php:    "*"
+    hiqdev/hidev-vendor: "*"
+    hiqdev/hidev-php:    "*"
