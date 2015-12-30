@@ -6,6 +6,8 @@ Omnipay: PayPal
 [![Latest Stable Version](https://poser.pugx.org/hiqdev/omnipay-paypal/v/stable)](https://packagist.org/packages/hiqdev/omnipay-paypal)
 [![Total Downloads](https://poser.pugx.org/hiqdev/omnipay-paypal/downloads)](https://packagist.org/packages/hiqdev/omnipay-paypal)
 [![Build Status](https://img.shields.io/travis/hiqdev/omnipay-paypal.svg)](https://travis-ci.org/hiqdev/omnipay-paypal)
+[![Code Coverage](https://scrutinizer-ci.com/g/hiqdev/omnipay-paypal/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/hiqdev/omnipay-paypal/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/hiqdev/omnipay-paypal/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/hiqdev/omnipay-paypal/?branch=master)
 [![Dependency Status](https://www.versioneye.com/php/hiqdev:omnipay-paypal/dev-master/badge.svg)](https://www.versioneye.com/php/hiqdev:omnipay-paypal/dev-master)
 
 [Omnipay](https://github.com/omnipay/omnipay) is a framework agnostic, multi-gateway payment

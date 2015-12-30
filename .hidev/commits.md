@@ -4,6 +4,7 @@ hiqdev/omnipay-paypal commits history
 ## Under development
 
 - Redone to `omnipay-paypal`
+    - 69ed3a8 2015-12-30 doing Complete Purchase, not finished (sol@hiqdev.com)
     - f537812 2015-12-11 removed assets, now in `payment-icons` (sol@hiqdev.com)
     - 2195238 2015-11-11 still redoing to omnipay (sol@hiqdev.com)
     - f531b9a 2015-11-09 php-cs-fixed (sol@hiqdev.com)
