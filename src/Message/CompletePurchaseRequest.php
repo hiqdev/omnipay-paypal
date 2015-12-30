@@ -24,7 +24,9 @@ class CompletePurchaseRequest extends AbstractRequest
     {
         $this->validate('purse');
 
-        return $this->httpRequest->request->all();
+        return array_merge([
+            'cmd' => '_notify-validate',
+        ], $this->httpRequest->request->all());
     }
 
     /**
@@ -41,10 +43,9 @@ class CompletePurchaseRequest extends AbstractRequest
                 CURLOPT_SSL_VERIFYPEER => 1,
             ),
         ));
-        d($data);
 
-        $httpResponse = $this->httpClient->post($this->request->getEndpoint(), null, $data)->send();
-        d($httpResponse);
+        $httpResponse = $this->httpClient->post($this->getEndpoint(), null, $data)->send();
+        $data['_result'] = $httpResponse->getBody(1);
 
         return $this->response = new CompletePurchaseResponse($this, $data);
     }

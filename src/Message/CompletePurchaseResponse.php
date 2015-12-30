@@ -25,8 +25,8 @@ class CompletePurchaseResponse extends AbstractResponse
         $this->request = $request;
         $this->data    = $data;
 
-        if ($this->getHash() !== $this->calculateHash()) {
-            throw new InvalidResponseException('Invalid hash');
+        if ($this->getResult() !== 'VERIFIED') {
+            throw new InvalidResponseException('Not verified');
         }
 
         if ($this->request->getTestMode() !== $this->getTestMode()) {
@@ -36,6 +36,73 @@ class CompletePurchaseResponse extends AbstractResponse
 
     public function isSuccessful()
     {
-        return false;
+        return true;
+    }
+
+    public function getResult()
+    {
+        return $this->data['_result'];
+    }
+
+    public function getTestMode()
+    {
+        return (bool)$this->data['test_ipn'];
+    }
+
+    /**
+     * {@inheritdoc}
+     * @return string
+     */
+    public function getTransactionId()
+    {
+        return $this->data['item_number'];
+    }
+
+    /**
+     * {@inheritdoc}
+     * @return string
+     */
+    public function getTransactionReference()
+    {
+        return $this->data['txn_id'];
+    }
+
+    public function getTransactionStatus()
+    {
+        return $this->data['payment_status'];
+    }
+
+    /**
+     * {@inheritdoc}
+     * @return string
+     */
+    public function getAmount()
+    {
+        return $this->data['payment_gross'];
+    }
+
+    /**
+     * {@inheritdoc}
+     * @return string
+     */
+    public function getFee()
+    {
+        return $this->data['payment_fee'];
+    }
+
+    public function getPayer()
+    {
+        $payer   = $this->data['address_name'] . '/' . $this->data['payer_email'];
+        $charset = strtoupper($this->data['charset']);
+        if ($charset !== 'UTF-8') {
+            $payer = iconv($charset, 'UTF-8//IGNORE', $payer);
+        }
+
+        return $payer;
+    }
+
+    public function getTime()
+    {
+        return date('c', strtotime($this->data['payment_date']));
     }
 }
