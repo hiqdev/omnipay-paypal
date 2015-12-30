@@ -16,7 +16,7 @@ class PurchaseRequest extends AbstractRequest
     public function getData()
     {
         $this->validate(
-            'username',
+            'purse',
             'amount', 'currency', 'description',
             'returnUrl', 'cancelUrl', 'notifyUrl'
         );
@@ -25,13 +25,13 @@ class PurchaseRequest extends AbstractRequest
             'cmd'           => '_xclick',
             'bn'            => 'PP-BuyNowBF:btn_paynowCC_LG.gif:NonHostedGuest',
             'item_name'     => $this->getDescription(),
-            'amount'        => $this->getAmount(),
+            'amount'        => $this->getSum(),
             'currency_code' => strtoupper($this->getCurrency()),
-            'business'      => $this->getUsername(),
+            'business'      => $this->getPurse(),
             'notify_url'    => $this->getNotifyUrl(),
             'return'        => $this->getReturnUrl(),
             'cancel_return' => $this->getCancelUrl(),
-            'item_number'   => 1,
+            'item_number'   => $this->getTransactionId(),
         ];
     }
 

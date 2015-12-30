@@ -18,25 +18,34 @@ class CompletePurchaseRequest extends AbstractRequest
 {
     /**
      * Get the data for this request.
-     *
      * @return array request data
      */
     public function getData()
     {
-        $this->validate('username');
+        $this->validate('purse');
 
         return $this->httpRequest->request->all();
     }
 
     /**
      * Send the request with specified data.
-     *
      * @param mixed $data The data to send
-     *
      * @return CompletePurchaseResponse
      */
     public function sendData($data)
     {
+        $this->httpClient->setConfig(array(
+            'curl.options' => array(
+                CURLOPT_SSLVERSION => 1,
+                CURLOPT_SSL_VERIFYHOST => 2,
+                CURLOPT_SSL_VERIFYPEER => 1,
+            ),
+        ));
+        d($data);
+
+        $httpResponse = $this->httpClient->post($this->request->getEndpoint(), null, $data)->send();
+        d($httpResponse);
+
         return $this->response = new CompletePurchaseResponse($this, $data);
     }
 }

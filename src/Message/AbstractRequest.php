@@ -18,47 +18,74 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
     protected $zeroAmountAllowed = false;
 
-    /**
-     * Get the username.
-     *
-     * @return string username
-     */
-    public function getUsername()
+    protected $mainEndpoint = 'https://www.paypal.com/cgi-bin/webscr';
+    protected $testEndpoint = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
+
+    public function getEndpoint()
     {
-        return $this->getParameter('username');
+        return $this->getTestMode() ? $this->testEndpoint : $this->mainEndpoint;
     }
 
     /**
-     * Set the username.
+     * Get the merchant purse.
      *
-     * @param string $purse username
+     * @return string merchant purse - email associated with the merchant account.
+     */
+    public function getPurse()
+    {
+        return $this->getParameter('purse');
+    }
+
+    /**
+     * Set the purse.
      *
+     * @param string $value merchant purse - email associated with the merchant account.
      * @return self
      */
-    public function setUsername($value)
+    public function setPurse($value)
     {
-        return $this->setParameter('username', $value);
+        return $this->setParameter('purse', $value);
     }
 
     /**
-     * Get the password.
+     * Get the merchant secret. Actually not used.
      *
-     * @return string password
+     * @return string merchant secret
      */
-    public function getPassword()
+    public function getSecret()
     {
-        return $this->getParameter('password');
+        return $this->getParameter('secret');
     }
 
     /**
-     * Set the password.
+     * Set the merchant secret. Actually not used.
      *
-     * @param string $key password
-     *
+     * @param string $value merchant secret
      * @return self
      */
-    public function setPassword($value)
+    public function setSecret($value)
     {
-        return $this->setParameter('password', $value);
+        return $this->setParameter('secret', $value);
+    }
+
+    /**
+     * Get the sum excluding fee.
+     *
+     * @return string sum excluding fee
+     */
+    public function getSum()
+    {
+        return $this->getParameter('sum') ?: $this->getAmount();
+    }
+
+    /**
+     * Set the sum excluding fee.
+     *
+     * @param string $value sum excluding fee
+     * @return self
+     */
+    public function setSum($value)
+    {
+        return $this->setParameter('sum', $value);
     }
 }

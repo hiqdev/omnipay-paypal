@@ -19,8 +19,6 @@ use Omnipay\Common\Message\RedirectResponseInterface;
  */
 class PurchaseResponse extends AbstractResponse implements RedirectResponseInterface
 {
-    protected $_redirect = 'https://www.paypal.com/cgi-bin/webscr';
-
     public function isSuccessful()
     {
         return false;
@@ -33,7 +31,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
 
     public function getRedirectUrl()
     {
-        return $this->_redirect;
+        return $this->response->getEndpoint();
     }
 
     public function getRedirectMethod()

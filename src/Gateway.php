@@ -26,128 +26,57 @@ class Gateway extends AbstractGateway
         return 'PayPal';
     }
 
-    public function getAssetDir()
-    {
-        return dirname(__DIR__) . '/assets';
-    }
-
     /**
      * {@inheritdoc}
      */
     public function getDefaultParameters()
     {
         return [
-            'merchantPurse' => '',
-            'testMode'      => false,
+            'purse'     => '',
+            'testMode'  => false,
         ];
-    }
-
-    /**
-     * Get the unified purse.
-     *
-     * @return string merchant purse
-     */
-    public function getPurse()
-    {
-        return $this->getUsername();
-    }
-
-    /**
-     * Set the unified purse.
-     *
-     * @param string $purse merchant purse
-     *
-     * @return self
-     */
-    public function setPurse($value)
-    {
-        return $this->setUsername($value);
     }
 
     /**
      * Get the merchant purse.
      *
-     * @return string merchant purse
+     * @return string merchant purse - email associated with the merchant account.
      */
-    public function getUsername()
+    public function getPurse()
     {
-        return $this->getParameter('username');
+        return $this->getParameter('purse');
     }
 
     /**
      * Set the merchant purse.
      *
-     * @param string $value merchant purse
-     *
+     * @param string $value merchant purse - email associated with the merchant account.
      * @return self
      */
-    public function setUsername($value)
+    public function setPurse($value)
     {
-        return $this->setParameter('username', $value);
+        return $this->setParameter('purse', $value);
     }
 
     /**
-     * Get the unified secret key.
+     * Get the merchant secret. Actually not used.
      *
-     * @return string secret key
+     * @return string merchant secret
      */
-    public function getSecretKey()
+    public function getSecret()
     {
-        return $this->getPassword();
+        return $this->getParameter('secret');
     }
 
     /**
-     * Set the unified secret key.
+     * Set the merchant secret. Actually not used.
      *
-     * @param string $value secret key
-     *
+     * @param string $value merchant secret
      * @return self
      */
-    public function setSecretKey($value)
+    public function setSecret($value)
     {
-        return $this->setPassword($value);
-    }
-
-    /**
-     * Get the password.
-     *
-     * @return string password
-     */
-    public function getPassword()
-    {
-        return $this->getParameter('password');
-    }
-
-    /**
-     * Set the password.
-     *
-     * @param string $value password
-     *
-     * @return self
-     */
-    public function setPassword($value)
-    {
-        return $this->setParameter('password', $value);
-    }
-
-    public function getSignature()
-    {
-        return $this->getParameter('signature');
-    }
-
-    public function setSignature($value)
-    {
-        return $this->setParameter('signature', $value);
-    }
-
-    /**
-     * @param array $parameters
-     *
-     * @return \Omnipay\PayPal\Message\AuthorizeRequest
-     */
-    public function authorize(array $parameters = [])
-    {
-        return $this->createRequest('\Omnipay\PayPal\Message\AuthorizeRequest', $parameters);
+        return $this->setParameter('secret', $value);
     }
 
     /**
@@ -158,16 +87,6 @@ class Gateway extends AbstractGateway
     public function purchase(array $parameters = [])
     {
         return $this->createRequest('\Omnipay\PayPal\Message\PurchaseRequest', $parameters);
-    }
-
-    /**
-     * @param array $parameters
-     *
-     * @return \Omnipay\PayPal\Message\CaptureRequest
-     */
-    public function capture(array $parameters = [])
-    {
-        return $this->createRequest('\Omnipay\PayPal\Message\CaptureRequest', $parameters);
     }
 
     /**
