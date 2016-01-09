@@ -20,10 +20,14 @@ use Omnipay\Common\Message\RequestInterface;
  */
 class CompletePurchaseResponse extends AbstractResponse
 {
+    /**
+     * @var CompletePurchaseRequest
+     */
+    public $request;
+
     public function __construct(RequestInterface $request, $data)
     {
-        $this->request = $request;
-        $this->data    = $data;
+        parent::__construct($request, $data);
 
         if ($this->getResult() !== 'VERIFIED') {
             throw new InvalidResponseException('Not verified');
@@ -34,16 +38,19 @@ class CompletePurchaseResponse extends AbstractResponse
         }
     }
 
+    /**
+     * Whether the payment is successful
+     * @return boolean
+     */
     public function isSuccessful()
     {
         return true;
     }
 
-    public function getResult()
-    {
-        return $this->data['_result'];
-    }
-
+    /**
+     * Whether the payment is test
+     * @return boolean
+     */
     public function getTestMode()
     {
         return (bool)$this->data['test_ipn'];
@@ -67,6 +74,10 @@ class CompletePurchaseResponse extends AbstractResponse
         return $this->data['txn_id'];
     }
 
+    /**
+     * Retruns the transatcion status
+     * @return string
+     */
     public function getTransactionStatus()
     {
         return $this->data['payment_status'];
@@ -90,9 +101,13 @@ class CompletePurchaseResponse extends AbstractResponse
         return $this->data['payment_fee'];
     }
 
+    /**
+     * Returns the payer "name/email"
+     * @return string
+     */
     public function getPayer()
     {
-        $payer   = $this->data['address_name'] . '/' . $this->data['payer_email'];
+        $payer = $this->data['address_name'] . '/' . $this->data['payer_email'];
         $charset = strtoupper($this->data['charset']);
         if ($charset !== 'UTF-8') {
             $payer = iconv($charset, 'UTF-8//IGNORE', $payer);
@@ -101,6 +116,10 @@ class CompletePurchaseResponse extends AbstractResponse
         return $payer;
     }
 
+    /**
+     * Returns the payment date
+     * @return string
+     */
     public function getTime()
     {
         return date('c', strtotime($this->data['payment_date']));
