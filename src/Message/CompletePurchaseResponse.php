@@ -102,6 +102,15 @@ class CompletePurchaseResponse extends AbstractResponse
     }
 
     /**
+     * Returns the currency
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return strtoupper($this->data['mc_currency']);
+    }
+
+    /**
      * Returns the payer "name/email"
      * @return string
      */
