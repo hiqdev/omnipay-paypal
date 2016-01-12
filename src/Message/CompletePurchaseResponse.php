@@ -93,6 +93,15 @@ class CompletePurchaseResponse extends AbstractResponse
     }
 
     /**
+     * Returns the result, injected by [[CompletePurchaseRequest::sendData()]]
+     * @return mixed
+     */
+    public function getResult()
+    {
+        return $this->data['_result'];
+    }
+
+    /**
      * {@inheritdoc}
      * @return string
      */
