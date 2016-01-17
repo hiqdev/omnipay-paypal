@@ -39,7 +39,7 @@ class CompletePurchaseResponse extends AbstractResponse
     }
 
     /**
-     * Whether the payment is successful
+     * Whether the payment is successful.
      * @return boolean
      */
     public function isSuccessful()
@@ -48,12 +48,12 @@ class CompletePurchaseResponse extends AbstractResponse
     }
 
     /**
-     * Whether the payment is test
+     * Whether the payment is test.
      * @return boolean
      */
     public function getTestMode()
     {
-        return (bool)$this->data['test_ipn'];
+        return (bool) $this->data['test_ipn'];
     }
 
     /**
@@ -75,7 +75,7 @@ class CompletePurchaseResponse extends AbstractResponse
     }
 
     /**
-     * Retruns the transatcion status
+     * Retruns the transatcion status.
      * @return string
      */
     public function getTransactionStatus()
@@ -93,7 +93,7 @@ class CompletePurchaseResponse extends AbstractResponse
     }
 
     /**
-     * Returns the result, injected by [[CompletePurchaseRequest::sendData()]]
+     * Returns the result, injected by [[CompletePurchaseRequest::sendData()]].
      * @return mixed
      */
     public function getResult()
@@ -111,7 +111,7 @@ class CompletePurchaseResponse extends AbstractResponse
     }
 
     /**
-     * Returns the currency
+     * Returns the currency.
      * @return string
      */
     public function getCurrency()
@@ -120,7 +120,7 @@ class CompletePurchaseResponse extends AbstractResponse
     }
 
     /**
-     * Returns the payer "name/email"
+     * Returns the payer "name/email".
      * @return string
      */
     public function getPayer()
@@ -135,7 +135,7 @@ class CompletePurchaseResponse extends AbstractResponse
     }
 
     /**
-     * Returns the payment date
+     * Returns the payment date.
      * @return string
      */
     public function getTime()
