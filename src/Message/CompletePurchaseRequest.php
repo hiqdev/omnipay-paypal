@@ -6,7 +6,7 @@
  * @link      https://github.com/hiqdev/omnipay-paypal
  * @package   omnipay-paypal
  * @license   MIT
- * @copyright Copyright (c) 2015, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2015-2016, HiQDev (http://hiqdev.com/)
  */
 
 namespace Omnipay\PayPal\Message;
@@ -36,13 +36,13 @@ class CompletePurchaseRequest extends AbstractRequest
      */
     public function sendData($data)
     {
-        $this->httpClient->setConfig(array(
-            'curl.options' => array(
+        $this->httpClient->setConfig([
+            'curl.options' => [
                 CURLOPT_SSLVERSION => 1,
                 CURLOPT_SSL_VERIFYHOST => 2,
                 CURLOPT_SSL_VERIFYPEER => 1,
-            ),
-        ));
+            ],
+        ]);
 
         $httpResponse = $this->httpClient->post($this->getEndpoint(), null, $data)->send();
         $data['_result'] = $httpResponse->getBody(1);
