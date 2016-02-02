@@ -3,9 +3,11 @@ hiqdev/omnipay-paypal commits history
 
 ## Under development
 
+- Added tests
+    - 918301b 2016-02-02 added tests (sol@hiqdev.com)
     - 521e9b0 2016-01-17 + tests (sol@hiqdev.com)
     - b833e48 2016-01-17 php-cs-fixed (sol@hiqdev.com)
-- Redone to `omnipay-paypal`
+- Changed: redone to `omnipay-paypal`
     - a9bc397 2016-01-12 Added CompletePurchaseResponse::getResult() (d.naumenko.a@gmail.com)
     - 6641fef 2016-01-10 Added CompletePurchaseResponse::getCurrency() method (d.naumenko.a@gmail.com)
     - 5794e4d 2016-01-09 Updated PHPDOCs (d.naumenko.a@gmail.com)
