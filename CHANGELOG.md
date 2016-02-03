@@ -3,7 +3,7 @@ hiqdev/omnipay-paypal changelog
 
 ## Under development
 
-- Added tests
+- Added tests, coverage 100%
 - Changed: redone to `omnipay-paypal`
 - Added basics
 

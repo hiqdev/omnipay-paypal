@@ -3,7 +3,8 @@ hiqdev/omnipay-paypal commits history
 
 ## Under development
 
-- Added tests
+- Added tests, coverage 100%
+    - fd83ef2 2016-02-03 added test coverage 100% (sol@hiqdev.com)
     - 918301b 2016-02-02 added tests (sol@hiqdev.com)
     - 521e9b0 2016-01-17 + tests (sol@hiqdev.com)
     - b833e48 2016-01-17 php-cs-fixed (sol@hiqdev.com)
