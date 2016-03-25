@@ -3,6 +3,9 @@ hiqdev/omnipay-paypal commits history
 
 ## Under development
 
+- Fixed mistake: use amount <- sum at PurchaseRequest
+    - 526ad17 2016-03-25 fixed tests for amount <- sum at PurchaseRequest (sol@hiqdev.com)
+    - 3dbf129 2016-03-25 fixed mistake: use amount not sum at PurchaseRequest (sol@hiqdev.com)
 - Added tests, coverage 100%
     - fd83ef2 2016-02-03 added test coverage 100% (sol@hiqdev.com)
     - 918301b 2016-02-02 added tests (sol@hiqdev.com)

@@ -6,12 +6,13 @@ Omnipay: PayPal
 [![Latest Stable Version](https://poser.pugx.org/hiqdev/omnipay-paypal/v/stable)](https://packagist.org/packages/hiqdev/omnipay-paypal)
 [![Total Downloads](https://poser.pugx.org/hiqdev/omnipay-paypal/downloads)](https://packagist.org/packages/hiqdev/omnipay-paypal)
 [![Build Status](https://img.shields.io/travis/hiqdev/omnipay-paypal.svg)](https://travis-ci.org/hiqdev/omnipay-paypal)
-[![Code Coverage](https://scrutinizer-ci.com/g/hiqdev/omnipay-paypal/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/hiqdev/omnipay-paypal/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/hiqdev/omnipay-paypal/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/hiqdev/omnipay-paypal/?branch=master)
+[![Scrutinizer Code Coverage](https://img.shields.io/scrutinizer/coverage/g/hiqdev/omnipay-paypal.svg)](https://scrutinizer-ci.com/g/hiqdev/omnipay-paypal/)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/hiqdev/omnipay-paypal.svg)](https://scrutinizer-ci.com/g/hiqdev/omnipay-paypal/)
 [![Dependency Status](https://www.versioneye.com/php/hiqdev:omnipay-paypal/dev-master/badge.svg)](https://www.versioneye.com/php/hiqdev:omnipay-paypal/dev-master)
 
 [Omnipay](https://github.com/omnipay/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+.
+
 This package implements [PayPal](https://paypal.com/) support for Omnipay.
 
 ## Installation
