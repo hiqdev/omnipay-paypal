@@ -26,7 +26,6 @@ class PurchaseRequestTest extends TestCase
     private $transactionId  = '12345ASD67890sd';
     private $sum            = '1.65';
     private $amount         = '14.65';
-    private $quantity       = '1';
     private $currency       = 'USD';
     private $testMode       = true;
 
@@ -54,13 +53,15 @@ class PurchaseRequestTest extends TestCase
     {
         $data = $this->request->getData();
 
+        $this->assertSame($this->sum,           $this->request->getSum());
+
         $this->assertSame($this->purse,         $data['business']);
         $this->assertSame($this->returnUrl,     $data['return']);
         $this->assertSame($this->cancelUrl,     $data['cancel_return']);
         $this->assertSame($this->notifyUrl,     $data['notify_url']);
         $this->assertSame($this->description,   $data['item_name']);
         $this->assertSame($this->transactionId, $data['item_number']);
-        $this->assertSame($this->sum,           $data['amount']);
+        $this->assertSame($this->amount,        $data['amount']);
     }
 
     public function testSendData()
