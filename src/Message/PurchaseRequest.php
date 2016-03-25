@@ -25,7 +25,7 @@ class PurchaseRequest extends AbstractRequest
             'cmd'           => '_xclick',
             'bn'            => 'PP-BuyNowBF:btn_paynowCC_LG.gif:NonHostedGuest',
             'item_name'     => $this->getDescription(),
-            'amount'        => $this->getSum(),
+            'amount'        => $this->getAmount(),
             'currency_code' => strtoupper($this->getCurrency()),
             'business'      => $this->getPurse(),
             'notify_url'    => $this->getNotifyUrl(),
