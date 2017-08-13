@@ -1,5 +1,4 @@
-Omnipay: PayPal
-===============
+# Omnipay: PayPal
 
 **PayPal driver for Omnipay PHP payment library**
 
@@ -10,10 +9,13 @@ Omnipay: PayPal
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/hiqdev/omnipay-paypal.svg)](https://scrutinizer-ci.com/g/hiqdev/omnipay-paypal/)
 [![Dependency Status](https://www.versioneye.com/php/hiqdev:omnipay-paypal/dev-master/badge.svg)](https://www.versioneye.com/php/hiqdev:omnipay-paypal/dev-master)
 
-[Omnipay](https://github.com/omnipay/omnipay) is a framework agnostic, multi-gateway payment
-processing library for PHP 5.3+.
+[Omnipay] is a framework agnostic, multi-gateway payment processing
+library for PHP 5.3+.
 
-This package implements [PayPal](https://paypal.com/) support for Omnipay.
+This package implements [PayPal] support for Omnipay.
+
+[Omnipay]: https://github.com/omnipay/omnipay
+[PayPal]:  https://paypal.com/
 
 ## Installation
 
@@ -38,4 +40,4 @@ to the require section of your composer.json.
 This project is released under the terms of the MIT [license](LICENSE).
 Read more [here](http://choosealicense.com/licenses/mit).
 
-Copyright © 2015-2016, HiQDev (http://hiqdev.com/)
+Copyright © 2015-2017, HiQDev (http://hiqdev.com/)
