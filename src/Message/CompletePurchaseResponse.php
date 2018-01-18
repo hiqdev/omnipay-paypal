@@ -89,7 +89,7 @@ class CompletePurchaseResponse extends AbstractResponse
      */
     public function getAmount()
     {
-        return $this->data['payment_gross'];
+        return $this->data['payment_gross'] ? : $this->data['mc_gross'];
     }
 
     /**
@@ -107,7 +107,7 @@ class CompletePurchaseResponse extends AbstractResponse
      */
     public function getFee()
     {
-        return $this->data['payment_fee'];
+        return $this->data['payment_fee'] ? : $this->data['mc_fee'];
     }
 
     /**
@@ -126,7 +126,7 @@ class CompletePurchaseResponse extends AbstractResponse
     public function getPayer()
     {
         $payer = $this->data['address_name'] . '/' . $this->data['payer_email'];
-        $charset = strtoupper($this->data['charset']);
+        $charset = strtoupper(str_replace("_", "-", $this->data['charset']));
         if ($charset !== 'UTF-8') {
             $payer = iconv($charset, 'UTF-8//IGNORE', $payer);
         }
