@@ -16,6 +16,9 @@ namespace Omnipay\PayPal\Message;
  */
 class CompletePurchaseRequest extends AbstractRequest
 {
+    protected $mainEndpoint = 'https://ipnpb.paypal.com/cgi-bin/webscr';
+    protected $testEndpoint = 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr';
+
     /**
      * Get the data for this request.
      * @return array request data
