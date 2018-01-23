@@ -32,6 +32,7 @@ class PurchaseRequest extends AbstractRequest
             'return'        => $this->getReturnUrl(),
             'cancel_return' => $this->getCancelUrl(),
             'item_number'   => $this->getTransactionId(),
+            'charset'       => 'utf-8',
         ];
     }
 
