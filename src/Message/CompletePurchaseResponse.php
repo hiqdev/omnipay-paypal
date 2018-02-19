@@ -36,6 +36,10 @@ class CompletePurchaseResponse extends AbstractResponse
         if ($this->request->getTestMode() !== $this->getTestMode()) {
             throw new InvalidResponseException('Invalid test mode');
         }
+
+        if ($this->getTransactionStatus() !== 'Completed') {
+            throw new InvalidResponseException('Invalid payment status');
+        }
     }
 
     /**
