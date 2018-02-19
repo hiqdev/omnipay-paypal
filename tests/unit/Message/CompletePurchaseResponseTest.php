@@ -61,6 +61,15 @@ class CompletePurchaseResponseTest extends TestCase
         ]);
     }
 
+    public function testInvalidPaymentStatusException()
+    {
+        $this->setExpectedException('Omnipay\Common\Exception\InvalidResponseException', 'Invalid payment status');
+        new CompletePurchaseResponse($this->request, [
+            'item_name'         => $this->description,
+            '_result'           => $this->response,
+        ]);
+    }
+
     public function testSuccess()
     {
         $response = new CompletePurchaseResponse($this->request, [
