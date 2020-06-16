@@ -11,9 +11,11 @@
 
 namespace Omnipay\PayPal\Message;
 
-use Guzzle\Http\Message\Response;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
 use Omnipay\Tests\TestCase;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
+use Omnipay\Common\Http\ClientInterface;
 
 class CompletePurchaseRequestTest extends TestCase
 {
@@ -35,17 +37,15 @@ class CompletePurchaseRequestTest extends TestCase
     {
         parent::setUp();
 
-        $httpResponse = new Response(200, null, $this->response);
+        $httpResponse = new Response(200, [], $this->response);
 
-        $tmpRequest = $this->getMock('Guzzle\Http\Message\Request', ['send'], ['POST', '']);
-        $tmpRequest->expects($this->any())->method('send')->will($this->returnValue($httpResponse));
-
-        $httpClient = $this->getMock('Guzzle\Http\Client', ['setConfig', 'post']);
-        $httpClient->expects($this->any())->method('post')->will($this->returnValue($tmpRequest));
+        $httpClient = $this->getMockBuilder(ClientInterface::class)->setMethods(['request'])->getMock();
+        $httpClient->expects($this->any())->method('request')->will($this->returnValue($httpResponse));
 
         $httpRequest = new HttpRequest([], [
             'business'          => $this->purse,
             'payment_gross'     => $this->amount,
+            'payment_status'    => 'Completed',
             'item_name'         => $this->description,
             'mc_currency'       => $this->currency,
             'payer_email'       => $this->payer,

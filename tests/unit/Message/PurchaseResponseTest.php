@@ -69,6 +69,7 @@ class PurchaseResponseTest extends TestCase
             'return'        => $this->returnUrl,
             'cancel_return' => $this->cancelUrl,
             'item_number'   => $this->transactionId,
+            'charset'       => 'utf-8'
         ], $response->getRedirectData());
     }
 }

@@ -46,7 +46,8 @@ class CompletePurchaseResponseTest extends TestCase
 
     public function testNotVerifiedException()
     {
-        $this->setExpectedException('Omnipay\Common\Exception\InvalidResponseException', 'Not verified');
+        $this->expectException(\Omnipay\Common\Exception\InvalidResponseException::class);
+        $this->expectExceptionMessage('Not verified');
         new CompletePurchaseResponse($this->request, [
             'description'           => $this->description,
         ]);
@@ -54,19 +55,23 @@ class CompletePurchaseResponseTest extends TestCase
 
     public function testInvalidTestModeException()
     {
-        $this->setExpectedException('Omnipay\Common\Exception\InvalidResponseException', 'Invalid test mode');
+        $this->expectException(\Omnipay\Common\Exception\InvalidResponseException::class);
+        $this->expectExceptionMessage('Invalid test mode');
         new CompletePurchaseResponse($this->request, [
             'item_name'         => $this->description,
             '_result'           => $this->response,
+            'payment_status'    => $this->transactionStatus,
         ]);
     }
 
     public function testInvalidPaymentStatusException()
     {
-        $this->setExpectedException('Omnipay\Common\Exception\InvalidResponseException', 'Invalid payment status');
+        $this->expectException(\Omnipay\Common\Exception\InvalidResponseException::class);
+        $this->expectExceptionMessage('Invalid payment status');
         new CompletePurchaseResponse($this->request, [
             'item_name'         => $this->description,
             '_result'           => $this->response,
+            'test_ipn'          => $this->testMode,
         ]);
     }
 

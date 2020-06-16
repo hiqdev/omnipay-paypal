@@ -43,16 +43,23 @@
         }
     ],
     "require": {
-        "omnipay/common": "~2.3"
+        "omnipay/common": "^3.0"
     },
     "require-dev": {
-        "omnipay/tests": "~2.0",
+        "omnipay/tests": "^3.0",
         "hiqdev/hidev-php": "*",
-        "hiqdev/hidev-hiqdev": "*"
+        "hiqdev/hidev-hiqdev": "*",
+        "omnipay/omnipay": "*",
+        "phpunit/phpunit": "^8.5.6"
     },
     "autoload": {
         "psr-4": {
             "Omnipay\\PayPal\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0.x-dev"
         }
     }
 }
