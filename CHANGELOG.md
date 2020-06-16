@@ -1,12 +1,19 @@
-hiqdev/omnipay-paypal changelog
--------------------------------
+## [3.0.0] - 2020-06-16
 
-## Under development
+## [Under development]
 
-- Fixed mistake: use amount <- sum at PurchaseRequest
-- Added tests, coverage 100%
-- Changed: redone to `omnipay-paypal`
-- Added basics
+## [2.0.0] - 2018-02-19
 
-## Development started 2015-10-22
+## [Development started] - 2015-10-22
 
+[@hiqsol]: https://github.com/hiqsol
+[sol@hiqdev.com]: https://github.com/hiqsol
+[@SilverFire]: https://github.com/SilverFire
+[d.naumenko.a@gmail.com]: https://github.com/SilverFire
+[@tafid]: https://github.com/tafid
+[andreyklochok@gmail.com]: https://github.com/tafid
+[@BladeRoot]: https://github.com/BladeRoot
+[bladeroot@gmail.com]: https://github.com/BladeRoot
+[3.0.0]: https://github.com/hiqdev/omnipay-paypal/releases/tag/3.0.0
+[Under development]: https://github.com/hiqdev/omnipay-paypal/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/hiqdev/omnipay-paypal/releases/tag/2.0.0
