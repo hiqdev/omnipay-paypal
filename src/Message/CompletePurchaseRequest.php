@@ -39,7 +39,9 @@ class CompletePurchaseRequest extends AbstractRequest
      */
     public function sendData($data)
     {
-        $httpResponse = $this->httpClient->request('POST', $this->getEndpoint(), [], $data);
+        $httpResponse = $this->httpClient->request('POST', $this->getEndpoint(), [
+            'Content-Type' => 'application/x-www-form-urlencoded'
+        ], http_build_query($data));
         $data['_result'] = $httpResponse->getBody()->getContents();
 
         return $this->response = new CompletePurchaseResponse($this, $data);
